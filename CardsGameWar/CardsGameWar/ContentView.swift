@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  CardsGameWar
-//
-//  Created by Mai Ra on 12/6/21.
-//
 
 import SwiftUI
 
@@ -25,9 +19,9 @@ struct ContentView: View {
                 Spacer()
                 HStack {
                          Spacer()
-                         Image("playerCard")
+                         Image(playerCard)
                          Spacer()
-                         Image("cpuCard")
+                         Image(cpuCard)
                          Spacer()
                         }
                     Spacer()
@@ -35,7 +29,7 @@ struct ContentView: View {
                 Button(action: {
                     // Generate a random number between 2 and 14
                     let playerRand = Int.random(in: 2...14)
-                              let cpuRand = Int.random(in: 2...14)
+                    let cpuRand = Int.random(in: 2...14)
                                        
                               // Update the cards
                               playerCard = "card" + String(playerRand)
@@ -62,7 +56,7 @@ struct ContentView: View {
                            .font(.headline)
                            .foregroundColor(Color.white)
                            .padding(.bottom, 10.0)
-                        Text("playerScore")
+                        Text(String(playerScore))
                            .font(.largeTitle)
                            .foregroundColor(Color.white)
                      }
@@ -72,7 +66,7 @@ struct ContentView: View {
                            .font(.headline)
                            .foregroundColor(Color.white)
                            .padding(.bottom, 10.0)
-                        Text("cpuScore")
+                        Text(String(cpuScore))
                            .font(.largeTitle)
                            .foregroundColor(Color.white)
                         }

@@ -8,15 +8,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var playerCard = "card5"
-    @State private var cpuCard = "card9"
+    @State private var playerCard = -1
+    @State private var cpuCard = -1
     @State private var playerScore = 0
     @State private var cpuScore = 0
     
         var body: some View {
             
         ZStack {
-            Image("background").resizable().ignoresSafeArea()
+            Image("background").resizable().ignoresSafeArea(.all)
             
             VStack {
                 Spacer()
@@ -24,33 +24,28 @@ struct ContentView: View {
                 Spacer()
                 HStack {
                          Spacer()
-                         Image(playerCard)
+                         Image(self.playerCard == -1 ? "back" : "card\(self.playerCard)")
                          Spacer()
-                         Image(cpuCard)
+                         Image(self.cpuCard == -1 ? "back" : "card\(self.cpuCard)")
                          Spacer()
                         }
                     Spacer()
                             
                 Button(action: {
                     // Generate a random number between 2 and 14
-                    let playerRand = Int.random(in: 2...14)
-                    let cpuRand = Int.random(in: 2...14)
+                    self.playerCard = Int.random(in: 2...14)
+                    self.cpuCard = Int.random(in: 2...14)
                                        
                               // Update the cards
-                              playerCard = "card" + String(playerRand)
-                              cpuCard = "card" + String(cpuRand)
-                                       
-                              // Update the score
-                              if playerRand > cpuRand {
-                                 playerScore += 1
-                              }
-                              else if cpuRand > playerRand {
-                                 cpuScore += 1
-                              }
+                    if self.playerCard > self.cpuCard {
+                                                self.playerScore += 1
+                                            } else if self.cpuCard > self.playerCard {
+                                                self.cpuScore += 1
+                                            }
                                        
                 },
                         label: {
-                           Image("dealbutton")
+                           Image("dealbutton").renderingMode(.original)
                         })
                             
                             Spacer()

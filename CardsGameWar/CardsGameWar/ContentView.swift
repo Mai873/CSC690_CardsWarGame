@@ -54,21 +54,21 @@ struct ContentView: View {
                      VStack {
                         Text("Player")
                            .font(.headline)
-                           .foregroundColor(Color.white)
+                           .foregroundColor(Color.black)
                            .padding(.bottom, 10.0)
                         Text(String(playerScore))
                            .font(.largeTitle)
-                           .foregroundColor(Color.white)
+                           .foregroundColor(Color.black)
                      }
                      Spacer()
                      VStack {
                         Text("CPU")
                            .font(.headline)
-                           .foregroundColor(Color.white)
+                           .foregroundColor(Color.black)
                            .padding(.bottom, 10.0)
                         Text(String(cpuScore))
                            .font(.largeTitle)
-                           .foregroundColor(Color.white)
+                           .foregroundColor(Color.black)
                         }
                      Spacer()
                 }

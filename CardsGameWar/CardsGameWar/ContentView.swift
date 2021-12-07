@@ -1,4 +1,9 @@
-
+//
+//  CardsGameWarView.swift
+//  CardsGameWar
+//
+//  Created by Mai Ra on 12/6/21.
+//
 import SwiftUI
 
 struct ContentView: View {
@@ -11,7 +16,7 @@ struct ContentView: View {
         var body: some View {
             
         ZStack {
-            Image("background").ignoresSafeArea()
+            Image("background").resizable().ignoresSafeArea()
             
             VStack {
                 Spacer()
